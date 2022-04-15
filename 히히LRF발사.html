@@ -1,22 +1,45 @@
 <html>
     <head>
         <title>히히 LRF 발사!</title>
-        <h3 style="color:red; font-weight:bold">주의!</h3>
-        <h4>고농도 방사선</h4>
+        <h3 style="color:red; font-weight:bold; display:inline">주의!</h3>
+        <h4 style="display:inline">고농도 방사선</h4>
 
         <style>
             .LRFbutton {
-                WIDTH: 64;
-                HEIGHT: 64;
+                width: 64;
+                height: 64;
                 background-color: black;
                 color: red;
                 font-weight: bold;
+                font-size:20;
                 border-color: gray;
+            }
+
+            .LRFcontrollerBody {
+                width: 64;
+                background-color: darkgreen;
+                margin-left: 50;
+                padding: 30;
             }
         </style>
     </head>
 
     <body>
-        
+        <div class="LRFcontrollerBody">
+            <button type="button" class="LRFbutton" onclick="shootLRF()">발사</button>
+        </div>
+        <p id="LRFcontrollerBody"></p>
     </body>
+
+    <script>
+        var origin = document.getElementById("LRFcontrollerBody");
+
+        function shootLRF() {
+            var new_text = document.createElement("p");
+            var new_node = document.createTextNode("빵야!");
+            new_text.appendChild(new_node);
+
+            origin.appendChild(new_text);
+        }
+    </script>
 </html>
